@@ -1,0 +1,84 @@
+<div>
+  <div class="mx-auto max-w-7xl py-24 sm:px-2 sm:py-32 lg:px-4">
+    <div class="mb-32 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div class="relative isolate overflow-hidden bg-wisdom-bleu px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
+        <h2 class="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-wisdom-blanc sm:text-4xl">1 Day 1 Country</h2>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">Explorez les richesses des nations à travers Wisdom, une plateforme qui vous emmène à la découverte des cultures, drapeaux et faits marquants des 197 pays du monde. Testez vos connaissances, apprenez chaque jour et embarquez pour un voyage global sans quitter votre écran. <br>
+          <br>
+          Prochain pays dans : <span data-controller="timer" data-timer-target="timeDisplay"></span></p>
+        <svg viewBox="0 0 1024 1024" class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]" aria-hidden="true">
+          <circle cx="512" cy="512" r="512" fill="url(#827591b1-ce8c-4110-b064-7cb85a0b1217)" fill-opacity="0.7" />
+          <defs>
+            <radialGradient id="827591b1-ce8c-4110-b064-7cb85a0b1217">
+              <stop stop-color="#3626a7" />
+              <stop offset="1" stop-color="#fbfbff" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <div class="mx-auto max-w-2xl px-4 lg:max-w-none">
+      <div class="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
+        <div>
+          <h2 class="text-7xl font-bold tracking-tight text-gray-900"><%= @today_country.name %></h2>
+          <p class="mt-8 text-gray-500"><%= @today_country.introduction %></p>
+        </div>
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg bg-gray-100">
+          <%= image_tag "capitale/#{@today_country.flat_name}.png", class: "object-cover object-center xl:rounded-3xl" %>
+        </div>
+      </div>
+      <div class="mt-32 grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg bg-gray-100">
+          <%= image_tag "flags/#{@today_country.flat_name}.png", class: "object-cover object-center xl:rounded-3xl" %>
+        </div>
+        <div>
+          <p class="text-gray-500"><%= @today_country.flag %></p>
+        </div>
+      </div>
+      <div class="mt-32 grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
+        <div>
+          <p class="text-gray-500"><%= @today_country.population %></p>
+        </div>
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg bg-gray-100">
+          <%= image_tag "maps/#{@today_country.flat_name}.png", class: "object-cover object-center xl:rounded-3xl" %>
+        </div>
+      </div>
+      <%= image_tag "main/#{@today_country.flat_name}.png", class: "mt-32 aspect-[5/2] w-full object-cover xl:rounded-3xl" %>
+      <div class="py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+            <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Aperçu général</h1>
+            <div class="mt-10 max-w-xl text-base leading-7 text-gray-700 lg:max-w-none lg:grid-cols-2">
+              <p><%= @today_country.apercu.html_safe %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
+          <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
+            <div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
+              <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Joyaux du Pays</h2>
+              <p class="mt-6 text-base leading-7 text-gray-700"><%= @today_country.joyaux %></p>
+            </div>
+            <div class="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
+              <div class="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
+                <%= image_tag "joyaux/#{@today_country.flat_name}_1.png", class: "aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover" %>
+              </div>
+              <div class="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
+                <div class="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
+                  <%= image_tag "joyaux/#{@today_country.flat_name}_2.png", class: "aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover" %>
+                </div>
+                <div class="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
+                  <%= image_tag "joyaux/#{@today_country.flat_name}_3.png", class: "aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover" %>
+                </div>
+                <div class="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
+                  <%= image_tag "joyaux/#{@today_country.flat_name}_4.png", class: "aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
