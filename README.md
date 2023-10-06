@@ -14,7 +14,7 @@ Vous avez déjà rêvé de parcourir le monde, de découvrir des cultures inconn
 ## Installation
 
 ```
-https://github.com/hugo-magnant/Wisdom.git
+git clone https://github.com/hugo-magnant/Wisdom.git
 cd Wisdom
 bundle install
 rails db:create db:migrate db:seed
